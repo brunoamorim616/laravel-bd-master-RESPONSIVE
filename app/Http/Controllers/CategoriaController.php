@@ -28,11 +28,12 @@ class CategoriaController extends Controller {
         $categoria = \App\Categoria::find($codcat);
         $categoria->delete();
         
-        return redirect('/categoria')->with('catEliminada', 'Categoria eliminada');
+        return 'true';
     }
     
     public function edit($codcat) {
         $categoria = \App\Categoria::find($codcat);
+        
         return view('categoria.edit', compact('categoria'));
     }
     
